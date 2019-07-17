@@ -23,7 +23,7 @@ join customers on orders.customerid = customers.customerid,  employees on orders
 
 ### (Stretch)  Displays CategoryName and a new column called Count that shows how many products are in each category. Shows 9 records.
 
-SELECT c.categoryname, COUNT(c.categoryid) as ItemCount from products as p 
+SELECT c.categoryname, COUNT(c.categoryid) as Count from products as p 
 join categories as c on p.categoryid = c.categoryid
 group by c.categoryid;
 

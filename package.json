@@ -4,7 +4,7 @@
   "description": "Challenge for Node DB3 Module",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js"
+    "server": "nodemon --exec babel-node index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/LambdaSchool/node-db3-challenge#readme",
   "dependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/node": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
     "express": "^4.17.1",
     "knex": "^0.19.0",
     "knex-cleaner": "^1.2.1",
