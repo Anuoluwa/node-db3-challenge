@@ -16,3 +16,9 @@ export function findSteps(id) {
     .select("steps.*", "scheme_name as scheme")
     .where("scheme_id", id);
 }
+
+export function add(scheme) {
+  return db("schemes")
+    .insert(scheme)
+    .then(ids => ({ id: ids[0] }));
+}
