@@ -9,3 +9,10 @@ export function findById(id) {
     .where({ id: Number(id) })
     .first();
 }
+
+export function findSteps(id) {
+  return db("steps")
+    .join("schemes", "schemes.id", "scheme_id")
+    .select("steps.*", "scheme_name as scheme")
+    .where("scheme_id", id);
+}
