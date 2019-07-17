@@ -22,3 +22,22 @@ export function add(scheme) {
     .insert(scheme)
     .then(ids => ({ id: ids[0] }));
 }
+
+export function update(changes, id) {
+  return db("schemes")
+    .where("id", Number(id))
+    .update(changes)
+    .then(item => {
+        if(item > 0) {
+           return findById(id)
+        } else {
+            return 'No scheme available'
+        }
+    })
+}
+
+export function remove(id) {
+  return db("schemes")
+    .where("id", Number(id))
+    .del();
+}
